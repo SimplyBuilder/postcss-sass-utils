@@ -1,0 +1,16 @@
+
+@mixin text-transform {
+  --text-uppercase: uppercase;
+  --text-lowercase: lowercase;
+  --text-capitalize: capitalize;
+  --text-reset-case: none;
+}
+@mixin text-overflow {
+  --text-ellipsis: ellipsis;
+  --text-clip: clip;
+}
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: var(--text-ellipsis);
+  white-space: nowrap;
+}
