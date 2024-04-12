@@ -1,0 +1,68 @@
+@use "sass:list";
+
+@mixin font-size {
+  $sizes: 0.5rem, /* 8px */
+  1rem, /* 16px */
+  1.5rem, /* 24px */
+  2rem, /* 32px */
+  2.5rem, /* 40px */
+  3rem, /* 48px */
+  3.5rem, /* 56px */
+  4rem, /* 64px */
+  4.5rem, /* 72px */
+  5rem, /* 80px */
+  5.5rem, /* 88px */
+  6rem, /* 96px */
+  6.5rem, /* 104px */
+  7rem; /* 112px */
+  @each $size in $sizes {
+    $index: list.index($sizes, $size);
+    --font-size-#{$index}: #{$size}
+  }
+}
+@mixin font-fluid-size {
+  $sizes: clamp(0.5rem, -1vw + 1rem, 1rem),
+  clamp(1rem, 1vw + 1rem, 1.5rem),
+  clamp(1rem, 2vw + 1rem, 1.5rem),
+  clamp(1.5rem, 1vw + 1rem, 2rem),
+  clamp(1.5rem, 2vw + 1rem, 2rem),
+  clamp(1.5rem, 3vw + 1rem, 2rem),
+  clamp(1.5rem, 4vw + 1rem, 2rem),
+  clamp(1.5rem, 5vw + 1rem, 2rem),
+  clamp(2rem, 2vw + 1rem, 2.5rem),
+  clamp(2rem, 3vw + 1rem, 2.5rem),
+  clamp(2rem, 4vw + 1rem, 2.5rem),
+  clamp(2rem, 5vw + 1rem, 2.5rem),
+  clamp(2.5rem, 2vw + 1rem, 3rem),
+  clamp(2.5rem, 3vw + 1rem, 3rem),
+  clamp(2.5rem, 4vw + 1rem, 3rem),
+  clamp(2.5rem, 5vw + 1rem, 3rem);
+  @each $size in $sizes {
+    $index: list.index($sizes, $size);
+    --font-fluid-size-#{$index}: #{$size}
+  }
+}
+@mixin font-line-height {
+  --font-line-height-00: .95;
+  --font-line-height-0: 1.1;
+  $sizes: 1.25, 1.375, 1.5, 1.75, 2;
+  @each $size in $sizes {
+    $index: list.index($sizes, $size);
+    --font-line-height-#{$index}: #{$size}
+  }
+}
+@mixin font-letter-spacing {
+  --font-letter-spacing-0: -0.5rem; /* -8px */
+  $sizes: 0.025rem, /* 0.4px */
+  0.05rem, /* 0.8 px */
+  0.075rem, /* 1.2px */
+  0.15rem, /* 2.4px */
+  0.25rem, /* 4px */
+  0.5rem, /* 8px */
+  0.75rem, /* 12px */
+  1rem; /* 16px */
+  @each $size in $sizes {
+    $index: list.index($sizes, $size);
+    --font-letter-spacing-#{$index}: #{$size}
+  }
+}
