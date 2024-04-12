@@ -66,3 +66,10 @@
     --font-letter-spacing-#{$index}: #{$size}
   }
 }
+@mixin font-weight {
+  $sizes: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  @each $size in $sizes {
+    $index: list.index($sizes, $size);
+    --font-weight-#{$index}: #{$size}
+  }
+}
