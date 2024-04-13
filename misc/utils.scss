@@ -14,12 +14,12 @@
   @include full-height;
 }
 @mixin full-block {
-  display: flex;
+  display: block;
   @include full-width;
   @include full-height;
 }
 @mixin full-grid {
-  display: flex;
+  display: grid;
   @include full-width;
   @include full-height;
 }
